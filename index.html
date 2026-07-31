@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyber Tool Atlas</title>
+    <meta name="description" content="A clean, searchable cybersecurity tools directory organized by category.">
+    <meta property="og:title" content="Cyber Tool Atlas">
+    <meta property="og:description" content="A clean, searchable cybersecurity tools directory organized by category.">
+    <meta property="og:image" content="assets/atlas-card.png">
+    <meta name="theme-color" content="#f5f7ef">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Cyber Tool Atlas home">
+          <img src="assets/favicon.png" width="34" height="34" alt="">
+          <span>Cyber Tool Atlas</span>
+        </a>
+        <nav class="top-links" aria-label="Project links">
+          <a id="repoLink" href="#" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="intro-band">
+        <div class="intro-copy">
+          <p class="eyebrow">Security resources, cleaned up</p>
+          <h1>Cyber Tool Atlas</h1>
+          <p class="intro-text">
+            A faster, easier directory for OSINT, pentesting, privacy, forensics, learning, hardware, media, and security utilities.
+          </p>
+          <div class="stats-row" aria-label="Directory totals">
+            <div>
+              <strong id="toolTotal">0</strong>
+              <span>links</span>
+            </div>
+            <div>
+              <strong id="categoryTotal">0</strong>
+              <span>categories</span>
+            </div>
+            <div>
+              <strong>Fast</strong>
+              <span>search</span>
+            </div>
+          </div>
+        </div>
+        <img class="atlas-visual" src="assets/atlas-map.png" alt="Abstract grid map for Cyber Tool Atlas">
+      </section>
+
+      <section class="controls-band" aria-label="Directory controls">
+        <div class="search-panel">
+          <label class="field-label" for="searchInput">Search</label>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Search tools, topics, domains...">
+        </div>
+        <div class="filter-panel">
+          <label class="field-label" for="categorySelect">Category</label>
+          <select id="categorySelect">
+            <option value="All">All categories</option>
+          </select>
+        </div>
+        <div class="filter-panel">
+          <label class="field-label" for="sortSelect">Sort</label>
+          <select id="sortSelect">
+            <option value="name">Name</option>
+            <option value="category">Category</option>
+            <option value="section">Section</option>
+          </select>
+        </div>
+        <button id="resetButton" class="quiet-button" type="button">Reset</button>
+      </section>
+
+      <section class="notice-band">
+        <p>Use these resources only for learning, defense, research, or systems you are authorized to test.</p>
+      </section>
+
+      <section class="directory-layout" aria-label="Cybersecurity tools directory">
+        <aside class="category-rail" aria-label="Categories">
+          <div class="rail-heading">
+            <h2>Categories</h2>
+            <span id="activeCount">0 shown</span>
+          </div>
+          <div id="categoryList" class="category-list"></div>
+        </aside>
+
+        <div class="results-area">
+          <div class="results-heading">
+            <div>
+              <p class="eyebrow">Directory</p>
+              <h2 id="resultsTitle">All Tools</h2>
+            </div>
+            <p id="resultsSummary"></p>
+          </div>
+          <div id="toolGrid" class="tool-grid"></div>
+          <div id="emptyState" class="empty-state" hidden>
+            <h3>No matches found</h3>
+            <p>Try a broader word or switch back to all categories.</p>
+          </div>
+          <button id="loadMoreButton" class="load-more" type="button" hidden>Show more</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Cyber Tool Atlas is a low-noise directory for security learning, defensive work, and authorized research.</p>
+    </footer>
+
+    <script src="tools-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
